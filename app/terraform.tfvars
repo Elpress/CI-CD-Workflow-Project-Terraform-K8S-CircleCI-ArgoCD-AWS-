@@ -1,6 +1,6 @@
 REGION = "us-east-1"
 
-PROJECT_NAME = "EKS-APP"
+PROJECT_NAMES  = "EKS-APP"
 
 VPC_CIDR = "192.168.0.0/24"
 

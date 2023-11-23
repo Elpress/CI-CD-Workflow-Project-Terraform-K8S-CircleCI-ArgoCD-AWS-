@@ -2,7 +2,7 @@ variable "REGION" {
   
 }
 
-variable "PROJECT_NAME" {
+variable "PROJECT_NAMES" {
   
 }
 

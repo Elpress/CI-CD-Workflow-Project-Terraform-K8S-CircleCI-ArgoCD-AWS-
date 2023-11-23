@@ -16,10 +16,10 @@ resource "aws_eks_cluster" "eks" {
 
     #Must be at least 2 different AZ
     subnet_ids = [
-        var.var.PUB_SUB_1_A_ID,
+        var.PUB_SUB_1_A_ID,
         var.PUB_SUB_2_B_ID,
-        var.PUB_SUB_3_A_ID,
-        var.PUB_SUB_4_B_ID
+        var.PRI_SUB_3_A_ID,
+        var.PRI_SUB_4_B_ID
     ]
 
   }
