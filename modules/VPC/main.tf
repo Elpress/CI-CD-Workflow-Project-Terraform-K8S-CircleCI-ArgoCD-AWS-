@@ -8,7 +8,7 @@ resource "aws_vpc" "vpc" {
 
   # Enable/disable ClassicLink DNS Support for the VPC.
   # enable_classiclink_dns_support = false
-  
+
 
   # Requests an Amazon-provided IPv6 CIDR block with a /56 prefix length for the VPC.
   assign_generated_ipv6_cidr_block = false
@@ -42,9 +42,9 @@ resource "aws_subnet" "pub-sub-1-a" {
   map_public_ip_on_launch = true
 
   tags = {
-    Name                        = "pub-sub-1-a"
+    Name                                        = "pub-sub-1-a"
     "kubernetes.io/cluster/${var.PROJECT_NAME}" = "shared"
-    "kubernetes.io/role/elb"    = 1
+    "kubernetes.io/role/elb"                    = 1
 
   }
 }
@@ -57,9 +57,9 @@ resource "aws_subnet" "pub-sub-2-b" {
   map_public_ip_on_launch = true
 
   tags = {
-    Name                        = "pub-sub-2-b"
+    Name                                        = "pub-sub-2-b"
     "kubernetes.io/cluster/${var.PROJECT_NAME}" = "shared"
-    "kubernetes.io/role/elb"    = 1
+    "kubernetes.io/role/elb"                    = 1
   }
 }
 
@@ -100,9 +100,9 @@ resource "aws_subnet" "pri-sub-3-a" {
   map_public_ip_on_launch = false
 
   tags = {
-    Name                              = "pri-sub-3-a"
-    "kubernetes.io/cluster/${var.PROJECT_NAME}"       = "shared"
-    "kubernetes.io/role/internal-elb" = 1
+    Name                                        = "pri-sub-3-a"
+    "kubernetes.io/cluster/${var.PROJECT_NAME}" = "shared"
+    "kubernetes.io/role/internal-elb"           = 1
   }
 }
 
@@ -114,8 +114,8 @@ resource "aws_subnet" "pri-sub-4-b" {
   map_public_ip_on_launch = false
 
   tags = {
-    Name                              = "pri-sub-4-b"
-    "kubernetes.io/cluster/${var.PROJECT_NAME}"       = "shared"
-    "kubernetes.io/role/internal-elb" = 1
+    Name                                        = "pri-sub-4-b"
+    "kubernetes.io/cluster/${var.PROJECT_NAME}" = "shared"
+    "kubernetes.io/role/internal-elb"           = 1
   }
 }

@@ -1,3 +1,3 @@
 variable "PROJECT_NAME" {
-  
+
 }
