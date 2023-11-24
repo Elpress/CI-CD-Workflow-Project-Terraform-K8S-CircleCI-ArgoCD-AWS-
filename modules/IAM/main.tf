@@ -20,7 +20,7 @@ resource "aws_iam_role" "eks_cluster_role" {
   POLICY
 }
 
-resource "aws_idm_role_policy_attachement" "amazon_eks_cluster_policy" {
+resource "aws_iam_role_policy_attachement" "amazon_eks_cluster_policy" {
 
   # The ARN of the policy you want to apply
   # https://github.com/SummitRoute/aws_managed_policies/blob/master/policies/AmazonEKSClusterPolicy
@@ -29,7 +29,7 @@ resource "aws_idm_role_policy_attachement" "amazon_eks_cluster_policy" {
   role = aws_iam_role.eks_cluster_name
 }
 
-resource "aws_idm_role_policy_attachement" "elastic_loadbalancing_full_access" {
+resource "aws_iam_role_policy_attachement" "elastic_loadbalancing_full_access" {
 
   policy_arn = "arn:aws:iam::aws:policy/ElasticLoadBalancingFullAccess"
 

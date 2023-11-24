@@ -1,6 +1,6 @@
 #allocate elastic ip. this eip will be used for the nat-gateway in the public subnet pub-sub-1-a
 resource "aws_eip" "eip_nat_gw_a" {
-  domain = vpc
+  vpc = true
 
   tags = {
     Name = "NAT-GW-EIP-A"
@@ -9,7 +9,7 @@ resource "aws_eip" "eip_nat_gw_a" {
 
 #allocate elastic ip. this eip will be used for the nat-gateway in the public subnet pub-sub-2-b
 resource "aws_eip" "eip_nat_gw_b" {
-  domain = vpc
+  vpc = true
 
   tags = {
     Name = "NAT-GW-EIP-B"
@@ -46,9 +46,9 @@ resource "aws_nat_gateway" "nat_gw_b" {
 resource "aws_route_table" "Pri-RT-A" {
   vpc_id = var.VPC_ID
 
-  route = {
+  route {
     cidr_block     = "0.0.0.0/0"
-    nat_gateway_id = aws_nat_gateway.NAT-GW-A.id
+    gateway_id = aws_nat_gateway.nat_gw_a.id
   }
 
   tags = {
@@ -66,9 +66,9 @@ resource "aws_route_table_association" "Pri-sub-3-a-with-PRI-RT-A" {
 resource "aws_route_table" "Pri-RT-B" {
   vpc_id = var.VPC_ID
 
-  route = {
+  route {
     cidr_block     = "0.0.0.0/0"
-    nat_gateway_id = aws_nat_gateway.NAT-GW-B.id
+    gateway_id = aws_nat_gateway.nat_gw_b.id
   }
 
   tags = {

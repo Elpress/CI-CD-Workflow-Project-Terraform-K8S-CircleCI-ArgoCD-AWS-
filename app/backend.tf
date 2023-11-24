@@ -3,6 +3,6 @@ terraform {
     bucket         = "bucketforelvis"
     key            = "backend/elvis_terraform.tfstate"
     region         = "us-east-1"
-    dynamodb_table = "dynamoDB-state-locking"
+    dynamodb_table = "presley"
   }
 }
